@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Python фреймворки для Web-разработки</title>
+        <link rel="stylesheet" href="C:/Users/Hexor/node_modules/hiq/dist/hiq.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="header" id="dj0" style="border-radius: 10px;">
+            <table>
+                <tr>
+                    <td style="width: 80%;">
+                        <a href="index.html"><h2 style="width: 80%;">Python фреймворки для Web-разработки</h2></a>
+                        <ul class="menu-main">
+                            <li><a href="index.html">Фреймворк это</a></li>
+                            <li><a href="Django.html">Django</a></li>
+                            <li><a href="Pyramid.html">Pyramid</a></li>
+                            <li><a href="TurboGears.html"  class="current">TurboGears</a></li>
+                            <li><a href="Web2Py.html">Web2Py</a></li>
+                        </ul>
+                    </td>
+                    <td style="object-fit: cover;"><a href="index.html"><img src="content/logo.png" alt=""></a></td>
+                </tr>
+            </table>
+        </div>
+        <table class="main_page" style="margin-top: 0; border-radius: 10px;">
+            <tr>
+                <td class="sidebar" style="border-radius: 10px;">
+                    <dl>
+                        <dt><strong>Оглавление</strong></dt>
+                    </dl>
+                    <ul>
+                        <li><a href="TurboGears.html#dj1">Что такое TurboGears</a></li>
+                        <li><a href="TurboGears.html#dj2">Основное отличие фреимворка</a></li>
+                        <li><a href="TurboGears.html#dj3">Ключевые особенности TurboGears</a></li>
+                    </ul>
+                </td>
+                <td class="main">
+                    <div class="container.is-fluid">
+                        <h3 id="dj1">Что такое TurboGears</h3>
+                        <p>TurboGears — это ещё один веб-фреймворк для разработки веб-приложений, написанный на языке Python. Во время его создания вдохновение черпалось из опыта использования Django и Rails. Эти фреймворки имеют ряд ограничений и недостатков, а TurboGears попытался решить эти проблемы.</p>
+
+                        <figure>
+                            <img src="content/Turbo.png" alt="Turbo">
+                            <figcaption>TurboGears framework</figcaption>
+                        </figure>
+
+                        <p id="dj2">Основное отличие этого фреймворка от того же Django — не изобретение велосипеда в виде собственной ORM, а использование в качестве основных компонент стандартных и популярных библиотек, таких как Pylons, SQLAlchemy, Genshi и Repoze.</p>
+
+                        <p>Среди организаций, которые использовали TurboGears, — Bisque, ShowMeDo и SourceForge.</p>
+
+                        <p style="margin-bottom: 0;" id="dj3">Ключевые особенности TurboGears:
+                            <ol>
+                                <li>поддержка множества баз данных</li>
+                                <li>поддержка различных JavaScript-библиотек</li>
+                                <li>поддержка множества форматов обмена данными</li>
+                                <li>поддержка горизонтального масштабирования данных по примеру шардинга</li>
+                                <li>возможность расширения средствами стандартных WSGI-компонент</li>
+                            </ol>
+                        </p>
+                        <h3 id="dj4">Первая программа</h3>
+                        <p>TurboGears имеет минимальный режим, который позволяет быстро создавать приложения с одним файлом. Простые примеры и сервисы могут быть построены быстро с минимальным набором зависимостей.
+
+                        Класс приложения в приложении TG наследуется от класса TGController . Методы в этом классе доступны для доступа @expose декоратором из модуля tg . В нашем первом приложении метод index () отображается как корень нашего приложения. Класс TGController также необходимо импортировать из модуля tg .
+                        <pre><code>
+                            from tg import expose, TGController
+                            class MyController(TGController):
+                               @expose()
+                               def index(self):
+                                  return 'Hello World turbogears'
+                        </code>
+                        </pre>
+                        </p>
+
+
+
+Затем установите конфигурацию приложения и объявите объект приложения. Здесь конструктор класса AppConfig принимает два параметра – минимальный атрибут со значением true и класс контроллера.
+
+config = AppConfig(minimal = True, root_controller = RootController())
+application = config.make_wsgi_app()
+Функция make_wsgi_app () здесь создает объект приложения.
+
+Чтобы обслуживать это приложение, нам нужно запустить HTTP-сервер. Как упоминалось ранее, мы будем использовать модуль simple_server в пакете wsgiref для его настройки и запуска. Этот модуль имеет метод make_server (), который требует номер порта и объект приложения в качестве аргументов.
+
+from wsgiref.simple_server import make_server
+server = make_server('', 8080, application)
+server.serve_forever()
+Это означает, что наше приложение будет обслуживаться через порт 8080 локального хоста.
+                    </div>
+                    <div class="bot">
+                        <a href="TurboGears.html#dj0"><button class="redaktor">Наверх</button></a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <footer>
+            ©Илья Нехорошев, все выполнено в целях получения 5 по предмету:)
+        </footer>
+    </body>       
+</html>
