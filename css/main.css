@@ -1,0 +1,21 @@
+@import 'C:/Users/Hexor/node_modules/hiq/dist/hiq.css';
+
+:root {
+    --hiq-base-font-family:
+        /* Safari for OS X and iOS (San Francisco) */
+        -apple-system,
+        /* Chrome < 56 for OS X (San Francisco) */
+        BlinkMacSystemFont,
+        /* Windows */
+        'Segoe UI',
+        /* Android */
+        'Roboto',
+        /* Basic web fallback */
+        'Helvetica Neue', Arial, sans-serif;
+}
+
+div.container{
+	--hiq-max-container-width: 100%;
+	--hiq-container-horizontal-gap: 0px;
+	
+}
